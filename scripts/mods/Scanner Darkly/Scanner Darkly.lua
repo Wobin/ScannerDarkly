@@ -1,13 +1,19 @@
 --[[
 Title: Scanner Darkly
 Author: Wobin
-Date: 17/03/2023
+Date: 24/06/2025
 Repository: https://github.com/Wobin/ScannerDarkly
-Version:1.0
+Version:1.2.1
 ]]--
 local mod = get_mod("Scanner Darkly")
 local isScanning = false
 local ducked = false
+mod.version = "1.2.1"
+
+mod.on_all_mods_loaded = function()
+   mod:info(mod.version)
+end
+
 mod:hook_require("scripts/ui/constant_elements/elements/subtitles/constant_element_subtitles", function(data)    
     mod:hook_safe(data, "update", function(updata)
         if isScanning and not ducked then
@@ -23,11 +29,11 @@ mod:hook_require("scripts/ui/constant_elements/elements/subtitles/constant_eleme
       end)
     end)
 
-mod:hook_safe(CLASS.AuspexScanningEffects, "_stop_searching_sfx_loop", function(self)    
+mod:hook_safe(CLASS.AuspexScanningEffects, "_stop_scan_units_effects", function(self)    
     isScanning = false    
   end)
 
-mod:hook_safe(CLASS.AuspexScanningEffects, "_start_searching_sfx_loop", function(self)    
+mod:hook_safe(CLASS.AuspexScanningEffects, "_run_searching_sfx_loop", function(self)    
     isScanning = true
   end)
 
