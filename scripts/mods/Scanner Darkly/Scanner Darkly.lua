@@ -3,12 +3,11 @@ Title: Scanner Darkly
 Author: Wobin
 Date: 24/06/2025
 Repository: https://github.com/Wobin/ScannerDarkly
-Version:1.2.1
 ]]--
 local mod = get_mod("Scanner Darkly")
 local isScanning = false
 local ducked = false
-mod.version = "1.2.1"
+mod.version = mod.get_metadata and mod:get_metadata("version") or "unknown"
 
 mod.on_all_mods_loaded = function()
    mod:info(mod.version)

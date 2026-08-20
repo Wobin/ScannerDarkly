@@ -1,0 +1,15 @@
+{
+	"name": "Scanner Darkly",
+	"description": "Makes the captions more transparent when using the auspex",
+	"version": "1.2.1",
+	"author": "Wobin",
+	"source": "https://github.com/Wobin/ScannerDarkly",
+	"funding": {
+		"kofi": "https://ko-fi.com/wobin_dwonderdog"
+	},
+	"order": {
+		"require": [],
+		"this_after": [],
+		"this_before": []
+	}
+}
